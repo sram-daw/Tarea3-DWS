@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&family=Tilt+Neon&display=swap');
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Tilt Neon', sans-serif;
+}
+
+p, li {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+}
+
+.border {
+    box-shadow: 15px 10px 7px -3px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: transform 0.3s;
+    background-color: rgb(228, 222, 255, 0.5)
+}
+
+    .border:hover {
+        transform: scale(1.05);
+    }

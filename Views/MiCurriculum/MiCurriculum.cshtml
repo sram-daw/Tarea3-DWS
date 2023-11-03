@@ -1,0 +1,118 @@
+﻿@{
+	ViewData["Title"] = "Mi Curriculum";
+	@model CurriculumModel
+
+}
+
+
+<div class="mb-5 text-center">
+	<h1>Mi Curriculum</h1>
+</div>
+
+<div class="container text-center my-5 encabezado">
+	<div class="row">
+		<div class="col">
+			<img class="img-fluid w-50 rounded" src="@Model.Foto" />
+		</div>
+		<div class="col d-flex flex-column justify-content-center align-items-center">
+			<h2>@Model.Nombre @Model.Apellido1 @Model.Apellido2</h2>
+			<h4>@Model.Titular</h4>
+		</div>
+	</div>
+</div>
+
+<div class="container experiencia mt-5">
+	<div class="row">
+		<div class="col p-4 mx-2 border">
+			<h3 class="text-center">Experiencia</h3>
+			<ul>
+				@foreach (var item in @Model.Experiencia)
+				{
+					var partes = item.Split(':');
+					var textoEnNegrita = partes[0];
+					var textoRestante = partes.Length > 1 ? ":" + partes[1] : "";
+					<p style="line-height: 1.5;">
+					<li>
+						<span style="font-weight: bold;">@textoEnNegrita</span>@textoRestante.
+					</li></p>
+
+				}
+			</ul>
+		</div>
+		<div class="col p-4 mx-2 border">
+			<h3 class="text-center">Formación</h3>
+			<ul>
+				@foreach (var item in @Model.Educacion)
+				{
+					var partes = item.Split('(');
+					var textoEnNegrita = partes[0];
+					var textoRestante = partes.Length > 1 ? "(" + partes[1] : "";
+
+					<p style="line-height: 1.5;">
+					<li>
+						<span style="font-weight: bold;">@textoEnNegrita</span>@textoRestante.
+					</li>
+					</p>
+
+				}
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container competencias mt-5">
+	<div class="row">
+		<div class="col p-4 mx-2 border">
+			<h3 class="text-center">Competencias</h3>
+			<ul">
+			@foreach (var item in @Model.Habilidades)
+			{
+				var partes = item.Split(':');
+				var textoEnNegrita = partes[0];
+				var textoRestante = partes.Length > 1 ? ":" + partes[1] : "";
+
+					<p style="line-height: 1.5;">
+					<li>
+						<span style="font-weight: bold;">@textoEnNegrita</span>@textoRestante.
+					</li>
+					</p>
+
+			}
+				</ul>
+		</div>
+		<div class="col p-4 mx-2 border">
+			<h3 class="text-center">Idiomas</h3>
+			<ul>
+			@foreach (var item in @Model.Idiomas)
+			{
+				var partes = item.Split(':');
+				var textoEnNegrita = partes[0];
+				var textoRestante = partes.Length > 1 ? ":" + partes[1] : "";
+
+					<p style="line-height: 1.5;">
+					<li>
+						<span style="font-weight: bold;">@textoEnNegrita</span>@textoRestante.
+					</li>
+					</p>
+			}
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container mt-5 p-4 text-center tecnologias border">
+	<h3>Tecnologías y programas</h3>
+
+			@foreach (var i in @Model.Tecnologias)
+			{
+		<img src="@i" class="img-fluid col-2 m-2" />
+			}
+
+</div>
+
+<div class="d-flex flex-column align-items-center mt-5">
+	<h3>Contacto</h3>
+	<p>@Model.Mail</p>
+	<p><a href="@Model.Linkedin">LinkedIn</a></p>
+	<p><a href="@Model.Github">Github</a></p>
+</div>

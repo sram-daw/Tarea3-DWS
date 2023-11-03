@@ -1,0 +1,43 @@
+﻿@model IEnumerable<RamiloAlonsoSaraTarea3.Models.Asignaturas>
+
+@{
+    ViewData["Title"] = "Asignaturas";
+}
+
+<h1>Asignaturas</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Acciones
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td> 
+                @Html.ActionLink("Detalles", "Detalles", new {  id=item.id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
