@@ -27,9 +27,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-	app.UseExceptionHandler("/Home/Error");
-	// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-	app.UseHsts();
+    app.UseExceptionHandler("/Home/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
 }
 
 app.UseHttpsRedirection();
@@ -65,15 +65,44 @@ app.MapControllerRoute(
     defaults: new { controller = "Estudiantes", action = "Detalles" }
     );
 
+//Profesores
+app.MapControllerRoute(
+    name: "ProfesoresLista",
+    pattern: "Profesor/Lista",
+    defaults: new { controller = "Profesores", action = "Index" }
+    );
+
+app.MapControllerRoute(
+    name: "ProfesorId",
+    pattern: "Profesor/Detalles/{id}",
+    defaults: new { controller = "Profesores", action = "Detalles" }
+    );
+
+
+
+app.MapControllerRoute(
+    name: "ProfesorId",
+    pattern: "Profesor/Detalles/{id}",
+    defaults: new { controller = "Profesores", action = "Detalles" }
+    );
+
+
 app.MapControllerRoute(
     name: "CvRoute",
-    pattern: "MiCurriculum",
+    pattern: "Login/MiCurriculum",
     defaults: new { controller = "MiCurriculum", action = "MiCurriculum" }
+    );
+
+//Login
+app.MapControllerRoute(
+    name: "login",
+    pattern: "Login/Logueate",
+    defaults: new { controller = "Logins", action = "Index" }
     );
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Logins}/{action=Index}");
 
 app.UseStaticFiles();
 

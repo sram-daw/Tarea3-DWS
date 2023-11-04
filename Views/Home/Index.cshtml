@@ -3,6 +3,23 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Catálogo de CVs</p>
+    <h1 class="display-4">Bienvenido/a</h1>
+    <ul style="list-style-type:none;">
+		<li>
+			<a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+		</li>
+
+		<li>
+			<a asp-area="" asp-controller="Asignaturas" asp-action="Index">Asignaturas</a>
+		</li>
+		<li>
+			<a asp-area="" asp-controller="Estudiantes" asp-action="Index">Estudiantes</a>
+		</li>
+		<li>
+			<a asp-area="" asp-controller="Profesores" asp-action="Index">Profesores</a>
+		</li>
+		<li>
+			<a asp-area="" asp-controller="MiCurriculum" asp-action="MiCurriculum">Mi Curriculum</a>
+		</li>
+    </ul>
 </div>

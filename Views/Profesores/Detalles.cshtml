@@ -1,32 +1,38 @@
-﻿@model RamiloAlonsoSaraTarea3.Models.Asignaturas
+﻿@model RamiloAlonsoSaraTarea3.Models.Profesores
 
 @{
     ViewData["Title"] = "Detalles";
 }
 
-<h1>Detalles de la asignatura</h1>
+<h1>Detalles del profesor</h1>
 
 <div>
-    <h4>Asignaturas</h4>
+    <h4>Profesores</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
             ID
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.id)
+            @Html.DisplayFor(model => model.Id)
         </dd>
         <dt class = "col-sm-2">
             Nombre
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.nombre)
+            @Html.DisplayFor(model => model.Nombre)
         </dd>
         <dt class = "col-sm-2">
-            Descripción
+            Edad
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.descripcion)
+            @Html.DisplayFor(model => model.Edad)
+        </dd>
+        <dt class = "col-sm-2">
+            Materia
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Materia)
         </dd>
     </dl>
 </div>

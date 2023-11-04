@@ -1,0 +1,41 @@
+﻿@model RamiloAlonsoSaraTarea3.Models.Logins
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Inicia sesión</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="checkLogin">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label">Nombre de usuario</label>
+                <input asp-for="Username" name="user" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Contraseña</label>
+                <input asp-for="Password" name="pwd" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Iniciar sesión" class="btn btn-primary" />
+            </div>
+        </form>
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+
+    </div>
+</div>
+
+<div>
+  <!--¿No tienes una cuenta? <a asp-action="Index">Back to List</a>-->
+</div>
+
