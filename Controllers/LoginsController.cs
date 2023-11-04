@@ -14,9 +14,7 @@ namespace RamiloAlonsoSaraTarea3.Controllers
         {
             return View();
         }
-
-        [HttpPost]
-        public async Task<IActionResult> checkLogin(string user, string pwd)
+        public IActionResult checkLogin(string user, string pwd)
         {
             var manager = new LoginManager(_context);
             var login = manager.GetLoginByUserPwd(user, pwd);
@@ -25,8 +23,8 @@ namespace RamiloAlonsoSaraTarea3.Controllers
             }
             else {
                 TempData["ErrorMessage"] = "Los datos introducidos no son correctos.";
-                return View("Index");
-            }
+				return RedirectToAction("Index");
+			}
         }
     }
 }
